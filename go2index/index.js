@@ -1,12 +1,12 @@
 // =======Options START=======
 var authConfig = {
-  siteName: "GoIndex-theme-acrou", // 网站名称
+  siteName: "Test", // 网站名称
   version: "1.1.2", // 程序版本
   theme: "acrou",
   // 强烈推荐使用自己的 client_id 和 client_secret
-  client_id: "202264815644.apps.googleusercontent.com",
-  client_secret: "X4Z3ca8xfWDb1Voo-F9a7ZxJ",
-  refresh_token: "", // 授权 token
+  client_id: VALUE_1,
+  client_secret: V_2,
+  refresh_token: V_3, // 授权 token
   /**
    * 设置要显示的多个云端硬盘；按格式添加多个
    * [id]: 可以是 团队盘id、子文件夹id、或者"root"（代表个人盘根目录）；
@@ -20,23 +20,52 @@ var authConfig = {
    * 不需要 Basic Auth 的盘，保持 user 和 pass 同时为空即可。（直接不设置也可以）
    * 【注意】对于id设置为为子文件夹id的盘将不支持搜索功能（不影响其他盘）。
    */
-  roots: [
+  roots: 
+  [
     {
-      id: "",
-      name: "TeamDrive",
-      pass: "",
+      "id": "0AI8hRtb4QwoxUk9PVA",
+      "name": "Inedexer_Template",
+      "user": "",
+      "pass": "",
+      "protect_file_link": false
     },
     {
-      id: "root",
-      name: "PrivateDrive",
-      user: "",
-      pass: "",
-      protect_file_link: true,
+      "id": "0AI8hRtb4QwoxUk9PVA",
+      "name": "Inedexer_Template",
+      "user": "",
+      "pass": "",
+      "protect_file_link": false
     },
     {
-      id: "",
-      name: "folder1",
-      pass: "",
+      "id": ID_1 ,
+      "name": N_1 ,
+      "user": "",
+      "pass": "",
+      "protect_file_link": false
+    },
+	{
+      "id": "1YrehnWi-_zzJYerMm82GUceU72cTPvqx",
+      "name": "Dragon Ball",
+      "user": "",
+      "pass": "",
+      "protect_file_link": false
+    },
+    {
+      "id": "1imZNmcnjkFtvcfstL97a1EZ4H5r5fEXZ",
+      "name": "Python",
+      "user": "",
+      "pass": "",
+      "protect_file_link": false
+    },
+    {
+      "id": "1h-fLTpXXAd8fS7ieeZI_rmQgkBv8JX47",
+      "name": "Do Not Open",
+      "user": "OMEGA1",
+      "pass": "---hahaha",
+      "protect_file_link": false
+    },
+    {
+
     },
   ],
   default_gd: 0,
@@ -55,17 +84,17 @@ var authConfig = {
    */
   search_result_list_page_size: 50,
   // 确认有 cors 用途的可以开启
-  enable_cors_file_down: false,
+  enable_cors_file_down: true,
   /**
    * 上面的 basic auth 已经包含了盘内全局保护的功能。所以默认不再去认证 .password 文件内的密码;
    * 如果在全局认证的基础上，仍需要给某些目录单独进行 .password 文件内的密码验证的话，将此选项设置为 true;
    * 【注意】如果开启了 .password 文件密码验证，每次列目录都会额外增加查询目录内 .password 文件是否存在的开销。
    */
-  enable_password_file_verify: false,
+  enable_password_file_verify: true,
 };
 
 var themeOptions = {
-  cdn: "https://cdn.jsdelivr.net/gh/Aicirou/goindex-theme-acrou",
+  cdn: "https://cdn.jsdelivr.net/gh/MOOGAA/goindex-theme-acrou",
   // 主题版本号
   version: "2.0.8",
   //可选默认系统语言:en/zh-chs/zh-cht
@@ -75,12 +104,12 @@ var themeOptions = {
      * 是否渲染HEAD.md文件
      * Render HEAD.md file
      */
-    head_md: false,
+    head_md: true,
     /**
      * 是否渲染README.md文件
      * Render README.md file
      */
-    readme_md: false,
+    readme_md: true,
     /**
      * 是否渲染文件/文件夹描述
      * Render file/folder description or not
@@ -166,6 +195,7 @@ function html(current_drive_order = 0, model = {}) {
     window.MODEL = JSON.parse('${JSON.stringify(model)}');
     window.current_drive_order = ${current_drive_order};
   </script>
+  <style>.navbar-item.has-dropdown,.footer{display:none}.container{max-width: 98%;}</style>
 </head>
 <body>
     <div id="app"></div>
